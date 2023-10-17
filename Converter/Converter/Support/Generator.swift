@@ -55,7 +55,7 @@ enum Generator {
     
     static func randomString(minLength: Int, maxLength: Int) -> String {
         let length = Int.random(in: minLength...maxLength)
-        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\n"
         return String((0..<length).map{ _ in letters.randomElement()! })
     }
     static func randomDate() -> String {

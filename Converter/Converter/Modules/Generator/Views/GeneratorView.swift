@@ -51,6 +51,7 @@ struct GeneratorView: View {
                 }
                 if !viewModel.text.isEmpty {
                     TextEditor(text: $viewModel.text)
+                        .lineSpacing(5)
                 }
             }
             .textFieldStyle(.roundedBorder)

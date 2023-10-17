@@ -28,7 +28,11 @@ class GeneratorViewModel: ObservableObject {
             let json = try jsonEncdoer.encode(data)
             try json.write(to: url.appendingPathComponent("\(fileName).json"))
             DispatchQueue.main.async {
-                self.text = self.formatText(model: data)
+                if data.count >= 7 {
+                    self.text = self.formatText(model: Array(data[0..<7])) + "..."
+                } else {
+                    self.text = self.formatText(model: data)
+                }
                 self.isSpinnerHidden = true
             }
         } catch {
